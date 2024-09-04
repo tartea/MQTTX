@@ -29,8 +29,7 @@ jobs:
           cd web
           # 假设构建输出在 'dist' 目录下，您可以根据实际情况修改
           tar -czf build-artifacts.tar.gz dist
-        # 这里假设 dist 是构建输出文件夹
-	
+
       - name: Upload App To Artifact universal
         if: success () || failure ()
         uses: actions/upload-artifact@v4
