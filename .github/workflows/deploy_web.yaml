@@ -24,9 +24,15 @@ jobs:
           cd web
           yarn && yarn build:online
 
-      - name: Publish Package
+      - name: Archive Build Artifacts
         run: |
           cd web
-          yarn publish --non-interactive --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.SMS_TOKEN }}
+          # 假设构建输出在 'dist' 目录下，您可以根据实际情况修改
+          tar -czf build-artifacts.tar.gz dist
+        # 这里假设 dist 是构建输出文件夹
+		
+	  - name: Upload Build Artifacts
+		uses: actions/upload-artifact@v4
+		with:
+		  name: build-artifacts
+		  path: web/build-artifacts.tar.gz
