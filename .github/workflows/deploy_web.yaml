@@ -31,8 +31,9 @@ jobs:
           tar -czf build-artifacts.tar.gz dist
         # 这里假设 dist 是构建输出文件夹
 		
-	  - name: Upload Build Artifacts
-		uses: actions/upload-artifact@v4
-		with:
-		  name: build-artifacts
-		  path: web/build-artifacts.tar.gz
+      - name: Upload App To Artifact universal
+        if: success () || failure ()
+        uses: actions/upload-artifact@v4
+        with:
+          name: "build-artifacts"
+          path: web/build-artifacts.tar.gz
