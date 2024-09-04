@@ -22,7 +22,7 @@ jobs:
       - name: Build
         run: |
           cd web
-          yarn && yarn build:online
+          yarn && yarn run electron:build-win
 
       - name: Archive Build Artifacts
         run: |
