@@ -134,7 +134,7 @@
     ]
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/emqx/MQTTX",
+  "repository": "https://github.com/tartea/MQTTX",
   "resolutions": {
     "electron-builder": "23.0.2"
   }
